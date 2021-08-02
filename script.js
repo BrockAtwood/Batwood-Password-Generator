@@ -89,6 +89,9 @@ var uppercaseCharacters = [
   "Y",
   "Z",
 ];
+
+var tryrunningPassword = "";
+
 var passwordLength;
 var specialCheck;
 var numberCheck;
@@ -118,22 +121,60 @@ function determineLength() {
 
 function determineSpecial() {
   specialCheck = confirm("Click OK to comfirm including special characters.");
+  return specialCheck;
 }
 
 function determineNumber() {
   numberCheck = confirm("Click OK to comfirm including number characters.");
+  return numberCheck;
 }
 
 function determinelowercase() {
   lowercaseCheck = confirm(
     "Click OK to comfirm including lowercase characters."
   );
+  return lowercaseCheck;
 }
 
 function determineuppercase() {
   uppercaseCheck = confirm(
     "Click OK to comfirm including uppercase characters."
   );
+  return uppercaseCheck;
+}
+
+function generatePassword() {
+  var passwordCharacters = "";
+
+  if (specialCheck) {
+    passwordCharacters = passwordCharacters.concat(uppercaseCharacters);
+  }
+
+  if (numberCheck) {
+    passwordCharacters = passwordCharacters.concat(numberCharacters);
+  }
+
+  if (lowercaseCheck) {
+    passwordCharacters = passwordCharacters.concat(lowercaseCharacters);
+  }
+
+  if (uppercaseCheck) {
+    passwordCharacters = passwordCharacters.concat(uppercaseCharacters);
+  }
+
+  // console.log(passwordCharacters);
+
+  // console.log(passwordLength);
+
+  for (i = 0; i < passwordLength; i++) {
+    tryrunningPassword =
+      tryrunningPassword +
+      passwordCharacters[Math.floor(Math.random() * passwordCharacters.length)];
+    console.log(tryrunningPassword);
+  }
+
+  // console.log(tryrunningPassword);
+  return tryrunningPassword;
 }
 
 function generatePassword() {
@@ -153,7 +194,6 @@ function generatePassword() {
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
   passwordText.value = password;
 }
 
