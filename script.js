@@ -91,20 +91,62 @@ var uppercaseCharacters = [
 ];
 
 //starter prompt
+
 var passwordlength = prompt(
   "How many characters would you like your password to contain?"
 );
-if (passwordlength < 8) {
-  alert("Password length must be at least 8 characters.");
-  var passwordlength;
-} else if (passwordlength > 128) {
-  alert("Password length must be less than 129 characters.");
-  var passwordlength;
-} else if (isNaN(passwordlength)) {
-  alert("Password length must be a number.");
-  var passwordlength;
+function determinelength() {
+  if (passwordlength < 8) {
+    alert("Password length must be at least 8 characters.");
+    passwordlength;
+  } else if (passwordlength > 128) {
+    alert("Password length must be less than 129 characters.");
+    passwordlength;
+  } else if (isNaN(passwordlength)) {
+    alert("Password length must be a number.");
+    passwordlength;
+  }
 }
-return passwordlength;
+
+var useAllspecialCharacters = confirm(
+  "Click OK to comfirm including special characters."
+);
+
+var useAllnumberCharacters = confirm(
+  "Click OK to confirm including numeric characters."
+);
+
+var useAlllowercaseCharacters = confirm(
+  "Click OK to confirm including lowercase characters."
+);
+
+var useAlluppercaseCharacters = confirm(
+  "Click OK to confirm inculding uppercase characters."
+);
+
+if (useAllspecialCharacters === true) {
+  for (i = 0; i < specialCharacters.length; i++) {
+    validchars.push(specialCharacters[i]);
+  }
+}
+
+if (useAllnumberCharacters === true) {
+  for (i = 0; i < numberCharacters.length; i++) {
+    validchars.push(numberCharacters[i]);
+  }
+}
+
+if (useAlllowercaseCharacters === true) {
+  for (i = 0; i < lowercaseCharacters.length; i++) {
+    validchars.push(lowercaseCharacters[i]);
+  }
+}
+
+if (useAlluppercaseCharacters === true) {
+  for (i = 0; i < uppercaseCharacters.length; i++) {
+    validchars.push(uppercaseCharacters[i]);
+  }
+}
 
 // Write password to the #password input
 function writePassword() {
