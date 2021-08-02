@@ -162,9 +162,9 @@ function generatePassword() {
     passwordCharacters = passwordCharacters.concat(uppercaseCharacters);
   }
 
-  // console.log(passwordCharacters);
+  console.log(passwordCharacters);
 
-  // console.log(passwordLength);
+  console.log(passwordLength);
 
   for (i = 0; i < passwordLength; i++) {
     tryrunningPassword =
@@ -173,7 +173,7 @@ function generatePassword() {
     console.log(tryrunningPassword);
   }
 
-  // console.log(tryrunningPassword);
+  console.log(tryrunningPassword);
   return tryrunningPassword;
 }
 
