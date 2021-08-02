@@ -192,9 +192,13 @@ function generatePassword() {
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+  var passwordLength = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
+}
+
+function resetText() {
+  document.getElementById("password").value = "Your Secure Password";
 }
 
 // Add event listener to generate button
