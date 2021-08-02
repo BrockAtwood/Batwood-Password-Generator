@@ -90,6 +90,22 @@ var uppercaseCharacters = [
   "Z",
 ];
 
+//starter prompt
+var passwordlength = prompt(
+  "How many characters would you like your password to contain?"
+);
+if (passwordlength < 8) {
+  alert("Password length must be at least 8 characters.");
+  var passwordlength;
+} else if (passwordlength > 128) {
+  alert("Password length must be less than 129 characters.");
+  var passwordlength;
+} else if (isNaN(passwordlength)) {
+  alert("Password length must be a number.");
+  var passwordlength;
+}
+return passwordlength;
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
