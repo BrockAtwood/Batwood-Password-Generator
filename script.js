@@ -110,7 +110,7 @@ function determineLength() {
     determineLength();
   } else {
     alert(
-      "Next, we will determine what tpyes of characters you want to use in your Generated Password."
+      "Next, we will determine what types of characters you want to use in your Generated Password."
     );
   }
   return passwordLength;
@@ -118,50 +118,35 @@ function determineLength() {
 
 function determineSpecial() {
   specialCheck = confirm("Click OK to comfirm including special characters.");
-  determineSpecial();
-  if (useAllspecialCharacters === true) {
-    for (i = 0; i < specialCharacters.length; i++) {
-      validchars.push(specialCharacters[i]);
-    }
-  } else useAllspecialCharacters === false;
-  return specialCheck;
 }
 
 function determineNumber() {
   numberCheck = confirm("Click OK to comfirm including number characters.");
-  determineNumber();
-  if (useAllnumberCharacters === true) {
-    for (i = 0; i < numberCharacters.length; i++) {
-      validchars.push(numberCharacters[i]);
-    }
-  } else useAllnumberCharacters === false;
-  return numberCheck;
 }
 
 function determinelowercase() {
   lowercaseCheck = confirm(
     "Click OK to comfirm including lowercase characters."
   );
-  determinelowercase();
-  if (useAlllowercaseCharacters === true) {
-    for (i = 0; i < lowercaseCharacters.length; i++) {
-      validchars.push(lowercaseCharacters[i]);
-    }
-  } else useAlllowercaseCharacters === false;
-  return lowercaseCheck;
 }
 
 function determineuppercase() {
   uppercaseCheck = confirm(
     "Click OK to comfirm including uppercase characters."
   );
+}
+
+function generatePassword() {
+  determineLength();
+  console.log(passwordLength);
+  determineSpecial();
+  console.log(specialCheck);
+  determineNumber();
+  console.log(numberCheck);
+  determinelowercase();
+  console.log(lowercaseCheck);
   determineuppercase();
-  if (useAlluppercaseCharacters === true) {
-    for (i = 0; i < uppercaseCharacters.length; i++) {
-      validchars.push(uppercaseCharacters[i]);
-    }
-  } else useAlluppercaseCharacters === false;
-  return uppercaseCheck;
+  console.log(uppercaseCheck);
 }
 
 // Write password to the #password input
