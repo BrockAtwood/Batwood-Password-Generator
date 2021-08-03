@@ -144,10 +144,20 @@ function determineuppercase() {
 }
 
 function generatePassword() {
+  determineLength();
+  console.log(passwordLength);
+  determineSpecial();
+  console.log(specialCheck);
+  determineNumber();
+  console.log(numberCheck);
+  determinelowercase();
+  console.log(lowercaseCheck);
+  determineuppercase();
+  console.log(uppercaseCheck);
   var passwordCharacters = "";
 
   if (specialCheck) {
-    passwordCharacters = passwordCharacters.concat(uppercaseCharacters);
+    passwordCharacters = passwordCharacters.concat(specialCharacters);
   }
 
   if (numberCheck) {
@@ -162,7 +172,7 @@ function generatePassword() {
     passwordCharacters = passwordCharacters.concat(uppercaseCharacters);
   }
 
-  console.log(passwordCharacters);
+  // console.log(passwordCharacters);
 
   console.log(passwordLength);
 
@@ -170,36 +180,36 @@ function generatePassword() {
     tryrunningPassword =
       tryrunningPassword +
       passwordCharacters[Math.floor(Math.random() * passwordCharacters.length)];
-    console.log(tryrunningPassword);
+    // console.log(tryrunningPassword);
   }
 
   console.log(tryrunningPassword);
   return tryrunningPassword;
 }
 
-function generatePassword() {
-  determineLength();
-  console.log(passwordLength);
-  determineSpecial();
-  console.log(specialCheck);
-  determineNumber();
-  console.log(numberCheck);
-  determinelowercase();
-  console.log(lowercaseCheck);
-  determineuppercase();
-  console.log(uppercaseCheck);
-}
+// function generatePassword() {
+//   determineLength();
+//   console.log(passwordLength);
+//   determineSpecial();
+//   console.log(specialCheck);
+//   determineNumber();
+//   console.log(numberCheck);
+//   determinelowercase();
+//   console.log(lowercaseCheck);
+//   determineuppercase();
+//   console.log(uppercaseCheck);
+// }
 
 // Write password to the #password input
 function writePassword() {
   var passwordLength = generatePassword();
   var passwordText = document.querySelector("#password");
-  passwordText.value = password;
+  passwordText.value = passwordLength;
 }
 
-function resetText() {
-  document.getElementById("password").value = "Your Secure Password";
-}
+// function resetText() {
+//   document.getElementById("password").value = "Your Secure Password";
+// }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
