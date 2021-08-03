@@ -24,7 +24,8 @@ Discription:
 - ifstatement for uppdercase
 
 ScreenShot:
-![Screen Shot 2021-08-02 at 10 34 23 AM](https://user-images.githubusercontent.com/87385012/127894551-e0a11c33-9855-45f6-af77-18da3b6c8e72.png)
+<img width="1265" alt="Screen Shot 2021-08-03 at 8 34 15 AM" src="https://user-images.githubusercontent.com/87385012/128035473-1329dea7-3764-427d-bc31-33a74ee11d39.png">
+
 
 Link:
 https://brockatwood.github.io/Batwood-Password-Generator/
