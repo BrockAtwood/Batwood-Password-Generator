@@ -28,4 +28,4 @@ ScreenShot:
 
 
 Link:
-https://brockatwood.github.io/Batwood-Password-Generator/
+https://brockatwood.github.io/Password-Generator/
